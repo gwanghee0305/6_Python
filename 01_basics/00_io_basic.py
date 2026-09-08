@@ -27,7 +27,7 @@ print("임광희", 20, "파랑")
 print("2026", "09", "07", sep="-")
 
 # 마지막 출력 문자 지정: end 옵션 사용
-print("첫번째 줄", end=" ")
+print("첫번째 줄", end='\n')
 print("두번째 줄")
 
 
@@ -82,4 +82,3 @@ print(f"입력값: {age_str}, 타입: {type(age_str)}")    # input() 함수는 �
 age = int(age_str)    # 문자열 -> 정수로 형변환
 print(f"입력값: {age}, 타입: {type(age)}")
 print(f"내년에는 {age + 1}살이 됩니다.")    # 계산 가능
-
