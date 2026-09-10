@@ -15,6 +15,9 @@
 
 #print(f"이름: {name}, 성별: {gender}, 나이: {age}, 키: {height}cm")
 
+# 풀이
+# print(f"이름: {name}, 성별: {'남' if gender == 'M' else '여'}, 나이: {age}, 키: {height:.1f}cm")
+
 """
 2. 영문 소문자를 입력받아 대문자로 변환하여 출력하세요.
 
@@ -67,6 +70,10 @@
 #print(f"2의 제곱: {n1 ** 2}")
 #print(f"4의 제곱근: {int(n2 ** 0.5)}")
 
+# 풀이
+# print(f"{n1}의 제곱: {n1 ** 2}")
+# print(f"{n2}의 제곱근: {int(n2 ** 0.5)}")
+
 """
 5. 키보드로 정수를 입력받아 정해진 점수 기준에 따라 학점을 출력하세요.
 
@@ -97,6 +104,23 @@
 # else: 
 #     print("점수를 옯바르게 입력하세요.")
 
+# 풀이
+# grade = int(input("점수를 입력하세요(0~100): "))
+
+# if grade < 0 or grade > 100:
+#     print("점수를 올바르게 입력하세요.")
+# else:
+#     if grade >= 90:
+#       print("A")
+#     elif grade >= 80:
+#       print("B")
+#     elif grade >= 70:
+#       print("C")
+#     elif grade >= 60:
+#       print("D")
+#     else:
+#       print("F")
+
 """
 6. 1부터 100까지의 숫자 중에서 짝수만 출력하는 프로그램
 
@@ -109,7 +133,8 @@
 
 # for i in range(1,101):
 #     if i % 2 == 0:
-#         print(i)
+#       continue
+#     print(i)
 
 """
 7. 1부터 100까지의 숫자 중에서 "3의 배수"이거나 "5의 배수가 아닌 수"의 합을 구하여 출력하는 프로그램
