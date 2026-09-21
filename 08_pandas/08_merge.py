@@ -109,4 +109,4 @@ print(f"{chk['_merge'].value_counts()}")
 # left_only : 오른쪽(part)에서 옴
 
 # how=inner 로 머지했을 때, 행이 줄었다면 확인이 어려우므로
-# how=outer, indicator=True 설정하여 어떤 데이터가 빠졌는 지 확인 할 수 있음
+# how=outer, indicator=True 설정하여 어떤 데이터가 빠졌는 지 확인 할 수 있음 
