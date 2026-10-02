@@ -43,7 +43,7 @@ print(df[cols].max())
 print("==== 최솟값 =====")
 print(df[cols].min())
 print("==== 평균값 =====")
-print(df[cols].mean())
+print(df[cols].mean().round(2))
 
 print("=" * 60)
 """
@@ -100,7 +100,7 @@ print("=" * 60)
     9. 성별(Sex)과 객실 등급(Pclass)을 기준으로 그룹화하여 각각의 평균 생존율을 계산하시오.
 """
 survival_rate = df.groupby(['Sex', 'Pclass'])['Survived'].mean()
-print(survival_rate)
+print(survival_rate.round(2))
 
 print("=" * 60)
 """
@@ -109,7 +109,7 @@ print("=" * 60)
     - 8번에서 생성한 `AgeGroup` 열을 기준으로 그룹화하여 계산하시오.
 """
 SP = df.groupby(['AgeGroup'])['Survived'].mean()
-print(SP)
+print(SP.round(2))
 
 print("=" * 60)
 """
@@ -126,7 +126,7 @@ missing_df = pd.DataFrame({
 })
 # 결측치 개수 기준을 내림차순. ascending=False 면 내림차순 /  ascending=True 면 오름차순 
 missing_df = missing_df.sort_values(by='결측치 개수', ascending=False)
-print(missing_df)
+print(missing_df.round(2))
 
 print("=" * 60)
 """
@@ -140,21 +140,21 @@ print("=" * 60)
     13. 탑승지(`Embarked`)별로 승객이 지불한 요금(`Fare`)의 평균을 계산하시오.
 """
 embarked_fare = df.groupby('Embarked')['Fare'].mean()
-print(embarked_fare)
+print(embarked_fare.round(2))
 
 print("=" * 60)
 """
     14. `Pclass`를 인덱스로, `Sex`를 컬럼으로, 값으로 `Fare`의 평균을 사용하여 **피벗 테이블**을 생성하시오.
 """
 pivot = df.pivot_table(index='Pclass', columns='Sex', values='Fare', aggfunc='mean')
-print(pivot)
+print(pivot.round(2))
 
 print("=" * 60)
 """
     15. `SibSp` (형제/배우자 수)와 `Parch` (부모/자녀 수)를 합산하여 `FamilySize` 열을 추가하고, 이 열의 요약 통계를 확인하세요.
 """
 df['FamilySize'] = df['SibSp'] + df['Parch']
-print(df['FamilySize'].describe())
+print(df['FamilySize'].describe().round(2))
 
 print("=" * 60)
 """
@@ -178,7 +178,7 @@ title_stats = df.groupby('Title').agg(
     평균나이 = ('Age', 'mean'),
     평균생존율 = ('Survived', 'mean')
 )
-print(title_stats)
+print(title_stats.round(2))
 
 print("=" * 60)
 """
